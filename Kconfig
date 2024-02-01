@@ -1,4 +1,10 @@
-mainmenu "Project Configuration"
+mainmenu "PentaLedger Configuration"
+
+menu "Generate Documentation"
+config DOXYGEN_GENERATION
+     bool "Generate Doxygen docs from source code"
+
+endmenu
 
 config TEST_OPTION
     bool "Test Option"

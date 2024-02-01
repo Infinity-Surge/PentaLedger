@@ -22,7 +22,17 @@ project(PentaLedger
     LANGUAGES   CXX
 )
 
+# CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths 
+# which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
+# Add cmake dir to search list
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
 include(cmake/top.cmake)
+
+if(CONFIG_DOXYGEN_GENERATION)
+include(documentation)
+endif(CONFIG_DOXYGEN_GENERATION)
+
 
 if(CONFIG_TEST_OPTION)
 
