@@ -28,14 +28,14 @@ project(PentaLedger
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 include(cmake/top.cmake)
+include(cmake/dependencies.cmake)
 
 if(CONFIG_DOXYGEN_GENERATION)
-include(documentation)
+    message("** Config doxygen_generation enabled")
+    include(documentation)
 endif(CONFIG_DOXYGEN_GENERATION)
 
-
-if(CONFIG_TEST_OPTION)
-
-    message("Config test_option enabled")
-
-endif()
+if(CONFIG_UNIT_TESTS)
+    enable_testing()
+    add_subdirectory(test)
+endif(CONFIG_UNIT_TESTS)

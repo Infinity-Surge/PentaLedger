@@ -1,1 +1,8 @@
-CONFIG_TEST_OPTION=y
+
+#
+# Generate Documentation
+#
+CONFIG_DOXYGEN_GENERATION=y
+# end of Generate Documentation
+
+CONFIG_UNIT_TESTS=y
