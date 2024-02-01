@@ -4,6 +4,7 @@ PentaLedger is envisioned to be a modular, high-security general
 ledger application written in C++.
 
 ## Status
+![build](https://github.com/Infinity-Surge/PentaLedger/actions/workflows/cmake-single-platform.yml/badge.svg)
 The project is in a kickstart/requirements gathering phase.  The project is not ready for production use.
 
 ## License
