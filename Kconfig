@@ -1,0 +1,18 @@
+mainmenu "PentaLedger Configuration"
+
+menu "Generate Documentation"
+config DOXYGEN_GENERATION
+     bool "Generate Doxygen docs from source code"
+     help
+        This option will build cross referenced documentation, 
+        based on properly formatted source code.
+endmenu
+
+config UNIT_TESTS
+    bool "Enable unit tests"
+    help
+        This option will enable unit tests.  These unit tests
+        depend on BOOST test, and will fail to build if the 
+        appropriate boost test framework is not installed.
+
+
