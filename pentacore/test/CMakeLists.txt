@@ -1,4 +1,4 @@
-# Dependencies
+# Unit Tests
 #
 # This is part of the PentaLedger software project.
 #
@@ -17,9 +17,18 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# Boost::unit_test_framework
 if(CONFIG_UNIT_TESTS)
-    message("** Config unit_test enabled")
-    find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-    include_directories (${Boost_INCLUDE_DIRS})
-endif()
+enable_testing()
+
+add_executable(
+  test_pentacore
+  main_test.cpp
+  leap_year_test.cpp
+  Environment_test.cpp
+)
+target_compile_definitions(test_pentacore PUBLIC BOOST_TEST_DYN_LINK)
+target_link_libraries(test_pentacore Boost::unit_test_framework)
+
+add_test(test_pentacore test_pentacore)
+
+endif(CONFIG_UNIT_TESTS)

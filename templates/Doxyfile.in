@@ -3,7 +3,7 @@ PROJECT_BRIEF          = "PentaLedger"
 DOXYFILE_ENCODING      = UTF-8
 
 OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/docs/
-INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/galactic/ @CMAKE_CURRENT_SOURCE_DIR@/src/
+INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/pentacore/ @CMAKE_CURRENT_SOURCE_DIR@/src/
 RECURSIVE              = YES
 
 EXTRACT_ALL            = YES
