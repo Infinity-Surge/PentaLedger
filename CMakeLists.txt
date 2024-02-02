@@ -35,7 +35,10 @@ if(CONFIG_DOXYGEN_GENERATION)
     include(documentation)
 endif(CONFIG_DOXYGEN_GENERATION)
 
+add_subdirectory(pentacore)
+
 if(CONFIG_UNIT_TESTS)
     enable_testing()
     add_subdirectory(test)
 endif(CONFIG_UNIT_TESTS)
+

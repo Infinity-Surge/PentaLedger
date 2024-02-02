@@ -23,4 +23,5 @@ add_executable(test_unit example_test.cpp)
 target_link_libraries(test_unit Boost::unit_test_framework)
 
 add_test(test_unit test_unit)
+
 endif(CONFIG_UNIT_TESTS)
