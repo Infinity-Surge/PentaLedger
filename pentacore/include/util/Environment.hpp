@@ -19,9 +19,9 @@
 #define _ENVIRONMENT_HPP_
 #include <string>
 #include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
 #ifdef __APPLE__
-     #include <sys/types.h>
-     #include <pwd.h>
      #include <uuid/uuid.h>
 #endif
 
