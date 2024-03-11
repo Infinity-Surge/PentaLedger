@@ -19,6 +19,6 @@ PentaLedger is available under the following licenses:
 ```
 mkdir build
 cd build
-cmake - -DBOARD=test ..
+cmake -DBOARD=test ..
 make
 ```
