@@ -12,3 +12,4 @@ _deps
 build/
 .config
 __pycache__/
+.DS_Store/
