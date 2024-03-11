@@ -14,13 +14,25 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
 project(PentaLedger
     VERSION     0.1
     DESCRIPTION "PentaLedger"
     LANGUAGES   CXX
 )
+
+# check for in source build.
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
+    message(FATAL_ERROR "Change working directory to ./build.")
+endif()
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules" ${CMAKE_MODULE_PATH})
+
+find_package(CompilerFlags REQUIRED MODULE)
+find_package(ConditionalCxxFlag REQUIRED MODULE)
 
 # CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths 
 # which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
