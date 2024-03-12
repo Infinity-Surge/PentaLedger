@@ -39,6 +39,10 @@ find_package(ConditionalCxxFlag REQUIRED MODULE)
 # Add cmake dir to search list
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+add_subdirectory(third-party/spdlog)
+
+find_package(spdlog)
+
 include(cmake/top.cmake)
 include(cmake/dependencies.cmake)
 
