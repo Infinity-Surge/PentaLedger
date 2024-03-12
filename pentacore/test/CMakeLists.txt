@@ -26,6 +26,8 @@ add_executable(
   leap_year_test.cpp
   Environment_test.cpp
   account_number_test.cpp
+  case_test.cpp
+  trim_test.cpp
 )
 target_compile_definitions(test_pentacore PUBLIC BOOST_TEST_DYN_LINK)
 target_link_libraries(test_pentacore Boost::unit_test_framework)

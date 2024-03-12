@@ -54,3 +54,8 @@ if(CONFIG_UNIT_TESTS)
     add_subdirectory(test)
 endif(CONFIG_UNIT_TESTS)
 
+include_directories(
+    ${CMAKE_CURRENT_LIST_DIR}/third-party/include 
+    )
+
+add_subdirectory(pentaserver)
