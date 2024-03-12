@@ -39,10 +39,6 @@ find_package(ConditionalCxxFlag REQUIRED MODULE)
 # Add cmake dir to search list
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-add_subdirectory(third-party/spdlog)
-
-find_package(spdlog)
-
 include(cmake/top.cmake)
 include(cmake/dependencies.cmake)
 
@@ -58,3 +54,8 @@ if(CONFIG_UNIT_TESTS)
     add_subdirectory(test)
 endif(CONFIG_UNIT_TESTS)
 
+include_directories(
+    ${CMAKE_CURRENT_LIST_DIR}/third-party/include 
+    )
+
+add_subdirectory(pentaserver)
