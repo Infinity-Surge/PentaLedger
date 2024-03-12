@@ -28,7 +28,7 @@ namespace infinity
         //! \brief Convert EBCDIC string to ASCII
         //!
         //! \param source string
-        //! 
+        //!
         //! \returns
         //! returns ASCII string.
         std::string ebcdicToAscii(const std::string &source)
@@ -65,6 +65,20 @@ namespace infinity
 
             return oss.str();
         }
+
+        // std::string StringUtils::ebcdicToAscii(const char *source, size_t size)
+        // {
+        //     std::string result;
+        //     result.reserve(size);
+
+        //     // Perform lookup and assign
+        //     for (unsigned int i = 0; i < size; i++)
+        //     {
+        //         result.push_back(EbcdicToAsciiTable[(unsigned char)source[i]]);
+        //     }
+
+        //     return result;
+        // }
 
     }
 }
