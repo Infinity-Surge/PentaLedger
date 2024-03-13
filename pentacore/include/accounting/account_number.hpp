@@ -25,16 +25,17 @@ namespace infinity
 {
 namespace accounting
 {
+
     union AccountNumber
     {
         uint32_t data;
-        struct 
-        {
-            u_int8_t  account_type;
-            u_int8_t  account_category;
-            u_int8_t  account;
-            u_int8_t  subaccount;
-        };
+        // struct 
+        // {
+        //     u_int8_t  account_type;
+        //     u_int8_t  account_category;
+        //     u_int8_t  account;
+        //     u_int8_t  subaccount;
+        // };
         char bytes[4];
     };
 

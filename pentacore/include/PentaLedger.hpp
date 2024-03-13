@@ -122,6 +122,14 @@ namespace time
 //! This namespace contains code dealing with accounting.
 namespace accounting
 {
+    //! \brief Payroll namespace
+    //!
+    //! This namespace contains code dealing with payroll and payroll
+    //! calculations.
+    namespace payroll
+    {
+
+    }
 }
 
 //! \brief Utility classes and functions

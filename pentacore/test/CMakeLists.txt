@@ -28,6 +28,7 @@ add_executable(
   account_number_test.cpp
   case_test.cpp
   trim_test.cpp
+  PayPeriods_tst.cpp
 )
 target_compile_definitions(test_pentacore PUBLIC BOOST_TEST_DYN_LINK)
 target_link_libraries(test_pentacore Boost::unit_test_framework)

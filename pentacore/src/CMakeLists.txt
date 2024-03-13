@@ -15,4 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-add_library(pentacore db/file_header.cpp)
+add_library(pentacore 
+    accounting/payroll/PayPeriods.cpp
+    db/file_header.cpp)
