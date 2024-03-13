@@ -3,6 +3,7 @@
 # Generate Documentation
 #
 CONFIG_DOXYGEN_GENERATION=y
+CONFIG_SPHINX_GENERATION=y
 # end of Generate Documentation
 
 CONFIG_UNIT_TESTS=y

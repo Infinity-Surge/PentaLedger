@@ -8,3 +8,6 @@ sudo apt-get install -y build-essential libboost-all-dev libssl-dev libffi-dev p
 
 # git flow
 sudo apt-get install git-flow
+
+# Install sphinx for documentation generation
+apt-get install python3-sphinx

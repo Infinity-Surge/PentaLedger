@@ -6,7 +6,13 @@ config DOXYGEN_GENERATION
      help
         This option will build cross referenced documentation, 
         based on properly formatted source code.
+
+config SPHINX_GENERATION
+    bool "Generate PDF documentation from source code"
+    help
+        This option will build the PDF documentation.
 endmenu
+
 
 config UNIT_TESTS
     bool "Enable unit tests"
