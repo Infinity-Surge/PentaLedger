@@ -1,8 +1,8 @@
 # FindSphinx.cmake
 #
-# This is part of the Galactic ERP software project.
+# This is part of the PentaLedger software project.
 #
-# Copyright (C) 2023  Infinity Surge Inc.
+# Copyright (C) 2024  Infinity Surge Inc.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,7 +16,6 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 include(FindPackageHandleStandardArgs)
 
 # We are likely to find Sphinx near the Python interpreter
