@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-only
-//! \file account_types.hpp
+//! \file response_codes.hpp
 //! \author Joe Turner <joe.turner@infinity-surge.com>
 //!
 //! \copyright
@@ -17,23 +17,25 @@
 //!
 //! You should have received a copy of the GNU General Public License
 //! along with this program; If not, see <http://www.gnu.org/licenses/>.
-#ifndef _ACCOUNT_TYPES_HPP_
-#define _ACCOUNT_TYPES_HPP_
+#ifndef _HTTP_RESPONSE_CODES_HPP_
+#define _HTTP_RESPONSE_CODES_HPP_
 
 namespace infinity
 {
-    namespace accounting
+
+    namespace http
     {
-
-        enum class AccountType : char
+        enum code
         {
-            ASSET = 0x01,
-            LIABILITIES = 0x02,
-            EQUITY = 0x03,
-            INCOME = 0x04,
-            EXPENSES = 0x05,
+            OK = 200,
+            BadRequest = 400,
+            Unauthorized = 401,
+            Forbidden = 403,
+            NotFound = 404,
+            MethodNotAllowed = 405,
+            InternalServerError = 500,
+            NotImplemented = 501,
         };
-    }
-}
-
+    } // namespace http
+} // namespace infinity
 #endif
