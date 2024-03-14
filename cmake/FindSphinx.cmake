@@ -1,4 +1,4 @@
-# Unit Tests
+# FindSphinx.cmake
 #
 # This is part of the PentaLedger software project.
 #
@@ -16,23 +16,31 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
+include(FindPackageHandleStandardArgs)
 
-if(CONFIG_UNIT_TESTS)
-enable_testing()
+# We are likely to find Sphinx near the Python interpreter
+find_package(PythonInterp)
+if(PYTHONINTERP_FOUND)
+    get_filename_component(_PYTHON_DIR "${PYTHON_EXECUTABLE}" DIRECTORY)
+    set(
+        _PYTHON_PATHS
+        "${_PYTHON_DIR}"
+        "${_PYTHON_DIR}/bin"
+        "${_PYTHON_DIR}/Scripts")
+endif()
 
-add_executable(
-  test_pentacore
-  main_test.cpp
-  leap_year_test.cpp
-  Environment_test.cpp
-  account_number_test.cpp
-  case_test.cpp
-  trim_test.cpp
-  PayPeriods_tst.cpp
-)
-target_compile_definitions(test_pentacore PUBLIC BOOST_TEST_DYN_LINK)
-target_link_libraries(test_pentacore Boost::unit_test_framework)
+find_program(
+    SPHINX_EXECUTABLE
+    NAMES sphinx-build sphinx-build.exe
+    HINTS ${_PYTHON_PATHS})
+mark_as_advanced(SPHINX_EXECUTABLE)
 
-add_test(test_pentacore test_pentacore)
+find_package_handle_standard_args(Sphinx DEFAULT_MSG SPHINX_EXECUTABLE)
 
-endif(CONFIG_UNIT_TESTS)
+
+# If finding Sphinx fails, there is no use in defining
+# add_sphinx_document, so return early
+if(NOT Sphinx_FOUND)
+    return()
+endif()
+

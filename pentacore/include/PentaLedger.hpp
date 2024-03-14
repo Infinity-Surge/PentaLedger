@@ -9,12 +9,12 @@
 //! modify it under the terms of the GNU General Public License
 //! as published by the Free Software Foundation; either version 2
 //! of the License, or (at your option) any later version.
-//! 
+//!
 //! This program is distributed in the hope that it will be useful,
 //! but WITHOUT ANY WARRANTY; without even the implied warranty of
 //! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //! GNU General Public License for more details.
-//! 
+//!
 //! You should have received a copy of the GNU General Public License
 //! along with this program; If not, see <http://www.gnu.org/licenses/>.
 #ifndef _PENTALEDGER_HPP_
@@ -94,44 +94,51 @@ $ sudo make uninstall
 namespace infinity
 {
 
-//! \brief Re-usable design patterns and idioms
-//!
-//! This namespace contains reusable idioms and design patterns.
-namespace Patterns
-{
-}
+    //! \brief Re-usable design patterns and idioms
+    //!
+    //! This namespace contains reusable idioms and design patterns.
+    namespace Patterns
+    {
+    }
 
-//! \brief Config files
-//!
-//! This namespace contains code dealing with loading, parsing, 
-//! generating, and saving configuration files for various change control
-//! systems, and code generation tools.
-namespace configuration
-{
-}
+    //! \brief Config files
+    //!
+    //! This namespace contains code dealing with loading, parsing,
+    //! generating, and saving configuration files for various change control
+    //! systems, and code generation tools.
+    namespace configuration
+    {
+    }
 
-//! \brief Time calculation
-//!
-//! This namespace contains code dealing with transforming dates and times.
-namespace time
-{
-}
+    //! \brief Time calculation
+    //!
+    //! This namespace contains code dealing with transforming dates and times.
+    namespace time
+    {
+    }
 
-//! \brief Accounting namespace
-//!
-//! This namespace contains code dealing with accounting.
-namespace accounting
-{
-}
+    //! \brief Accounting namespace
+    //!
+    //! This namespace contains code dealing with accounting.
+    namespace accounting
+    {
+        //! \brief Payroll namespace
+        //!
+        //! This namespace contains code to calculate payroll taxes,
+        //! whitholding, and otherwise generate payroll checks.
+        //!
+        namespace payroll
+        {
 
-//! \brief Utility classes and functions
-//!
-//! This namespace contains code dealing with various utility needs.
-namespace utility
-{
-}
+        }
+    }
 
-
+    //! \brief Utility classes and functions
+    //!
+    //! This namespace contains code dealing with various utility needs.
+    namespace utility
+    {
+    }
 
 }
 

@@ -41,3 +41,50 @@ if(CONFIG_DOXYGEN_GENERATION)
 	endif (DOXYGEN_FOUND)
 
 endif(CONFIG_DOXYGEN_GENERATION)
+
+if (CONFIG_SPHINX_GENERATION)
+find_package(Sphinx REQUIRED)
+if(Sphinx_FOUND)
+
+	# # 
+	# # Build user's guide
+	# set(BINARY_BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}/users_guide/_build")
+	
+	# # Sphinx cache with pickled ReST documents
+	# set(SPHINX_CACHE_DIR "${CMAKE_CURRENT_BINARY_DIR}/users_guide/_doctrees")
+	
+	# # HTML output directory
+	# set(SPHINX_HTML_DIR "${CMAKE_CURRENT_BINARY_DIR}/users_guide/html")
+	
+	# add_custom_target(users_guide_docs_html ALL
+	#     ${SPHINX_EXECUTABLE}
+	#         -q -b html
+	#         -c "${CMAKE_CURRENT_SOURCE_DIR}/doc/guide"
+	#         -d "${SPHINX_CACHE_DIR}"
+	#         "${CMAKE_CURRENT_SOURCE_DIR}/doc/guide"
+	#         "${SPHINX_HTML_DIR}"
+	#     COMMENT "Building HTML documentation with Sphinx")
+
+	# 
+	# Build user's guide
+	set(BINARY_BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}/design/_build")
+	
+	# Sphinx cache with pickled ReST documents
+	set(SPHINX_CACHE_DIR "${CMAKE_CURRENT_BINARY_DIR}/design/_doctrees")
+	
+	# HTML output directory
+	set(SPHINX_HTML_DIR "${CMAKE_CURRENT_BINARY_DIR}/design/html")
+	
+	add_custom_target(design_docs_html ALL
+		${SPHINX_EXECUTABLE}
+			-q -b html
+			-c "${CMAKE_CURRENT_SOURCE_DIR}/doc/design"
+			-d "${SPHINX_CACHE_DIR}"
+			"${CMAKE_CURRENT_SOURCE_DIR}/doc/design"
+			"${SPHINX_HTML_DIR}"
+		COMMENT "Building HTML documentation with Sphinx")
+
+else()
+	message(WARNING "No Sphinx found. Documentation target not available.")
+endif()
+endif (CONFIG_SPHINX_GENERATION)
