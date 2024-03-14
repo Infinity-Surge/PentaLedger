@@ -47,6 +47,10 @@ if(CONFIG_DOXYGEN_GENERATION)
     include(documentation)
 endif(CONFIG_DOXYGEN_GENERATION)
 
+# generate version header
+configure_file(templates/version.h.in version.h)
+include_directories(${PROJECT_BINARY_DIR})
+
 add_subdirectory(pentacore)
 
 if(CONFIG_UNIT_TESTS)
