@@ -15,9 +15,5 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-include_directories(
-    ${CMAKE_CURRENT_LIST_DIR}/include 
-    )
-
 subdirs(src)
 subdirs(test)

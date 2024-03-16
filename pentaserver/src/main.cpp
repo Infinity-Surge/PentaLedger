@@ -1,18 +1,33 @@
 #include <stdio.h>
 #include <httplib.h>
 
+#include "spdlog/spdlog.h"
+
+#include <Configuration.hpp>
+
+using namespace infinity;
+
 int main()
 {
-    printf("Hello world.\n");
+    spdlog::info("Welcome to spdlog version {}.{}.{}  !", SPDLOG_VER_MAJOR, SPDLOG_VER_MINOR,
+                 SPDLOG_VER_PATCH);
 
-    // HTTP
-    httplib::Server svr;
+    PentaLedgerConfiguration cfg;
+    if (!cfg.load())
+    {
+        spdlog::critical("Configuration failed to load.");
+    }
+    
+    // printf("Hello world.\n");
 
-    // HTTPS
-    //httplib::SSLServer svr;
+    // // HTTP
+    // httplib::Server svr;
 
-    svr.Get("/hi", [](const httplib::Request &, httplib::Response &res)
-            { res.set_content("Hello World!", "text/plain"); });
+    // // HTTPS
+    // //httplib::SSLServer svr;
 
-    svr.listen("0.0.0.0", 8181);
+    // svr.Get("/hi", [](const httplib::Request &, httplib::Response &res)
+    //         { res.set_content("Hello World!", "text/plain"); });
+
+    // svr.listen("0.0.0.0", 8181);
 }

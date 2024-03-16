@@ -23,3 +23,5 @@ if(CONFIG_UNIT_TESTS)
     find_package(Boost COMPONENTS unit_test_framework REQUIRED)
     include_directories (${Boost_INCLUDE_DIRS})
 endif()
+
+find_package(spdlog REQUIRED)
