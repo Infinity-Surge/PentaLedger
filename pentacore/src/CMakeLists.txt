@@ -17,4 +17,5 @@
 
 add_library(pentacore 
     accounting/payroll/PayPeriods.cpp
-    db/file_header.cpp)
+    db/file_header.cpp
+    Configuration.cpp)

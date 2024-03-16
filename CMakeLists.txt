@@ -51,6 +51,12 @@ endif(CONFIG_DOXYGEN_GENERATION)
 configure_file(templates/version.h.in version.h)
 include_directories(${PROJECT_BINARY_DIR})
 
+include_directories(
+    ${CMAKE_CURRENT_LIST_DIR}/pentacore/include 
+    )
+include_directories(
+        ${CMAKE_CURRENT_LIST_DIR}/third-party/include 
+        )    
 add_subdirectory(pentacore)
 
 if(CONFIG_UNIT_TESTS)
@@ -58,8 +64,6 @@ if(CONFIG_UNIT_TESTS)
     add_subdirectory(test)
 endif(CONFIG_UNIT_TESTS)
 
-include_directories(
-    ${CMAKE_CURRENT_LIST_DIR}/third-party/include 
-    )
+
 
 add_subdirectory(pentaserver)

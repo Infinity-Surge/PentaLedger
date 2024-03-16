@@ -3,6 +3,4 @@ add_executable(
   src/main.cpp
 )
 
-# target_link_libraries(pentaserver
-#   spdlog
-# )
+target_link_libraries(pentaserver PRIVATE pentacore spdlog::spdlog )
