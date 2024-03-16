@@ -30,7 +30,7 @@ jobs:
         
     - name: dependencies
       run: |
-        libicu70 libgmp3-dev libmpfr-dev texinfo tzdata python3-sphinx libfmt-dev libspdlog-dev
+        sudo apt-get install -y libicu70 libgmp3-dev libmpfr-dev texinfo tzdata python3-sphinx libfmt-dev libspdlog-dev
       
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
