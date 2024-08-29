@@ -7,6 +7,10 @@ import (
 	"os"
 )
 
+type application struct {
+	logger *slog.Logger
+}
+
 func main() {
 
 	addr := flag.String("addr", ":4000", "HTTP network address")
@@ -14,13 +18,17 @@ func main() {
 
 	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 
+	app := &application{
+		logger: logger,
+	}
+
 	mux := http.NewServeMux()
 
 	fileServer := http.FileServer(http.Dir("./ui/static"))
 
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))
 
-	mux.HandleFunc("GET /{$}", home)
+	mux.HandleFunc("GET /{$}", app.home)
 
 	logger.Info("Starting server ", "addr", *addr)
 
