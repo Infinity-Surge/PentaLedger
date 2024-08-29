@@ -1,0 +1,30 @@
+{{define "base"}}
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>{{template "title" .}} - PentaLedger</title>
+        <link rel='stylesheet' href='/static/vender/bootstrap/css/bootstrap.min.css'>
+    </head>
+    <body>
+    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">PentaLedger</a>
+    </header>
+
+    <!-- Invoke navigation template -->
+    {{template "nav" .}}
+    <main>
+        {{template "main" .}}
+    </main>
+    <footer>
+
+<div class="container">
+  <footer class="py-3 my-4">
+    <p class="text-center text-body-secondary">&copy; 2024 Infinity Surge, Inc</p>
+  </footer>
+</div>
+
+    <script src="/static/vender/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{{end}}
